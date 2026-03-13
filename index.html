@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>São Gabriel da Palha: Guia Completo da Cidade</title>
+    <meta name="description" content="Guia completo sobre São Gabriel da Palha ES. Descubra história, turismo, economia, população, serviços e tudo que você precisa saber sobre a cidade.">
+    <meta name="keywords" content="São Gabriel da Palha, história de São Gabriel da Palha, turismo em São Gabriel da Palha, população de São Gabriel da Palha, onde fica São Gabriel da Palha, economia de São Gabriel da Palha, guia de São Gabriel da Palha">
+    
+    <!-- Tailwind CSS CDN com Plugin de Tipografia -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Dados Estruturados (Schema Markup - JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "City",
+      "name": "São Gabriel da Palha",
+      "alternateName": "Capital do Café Conilon",
+      "description": "Guia completo sobre São Gabriel da Palha ES. Descubra história, turismo, economia e mais.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Gabriel da Palha",
+        "addressRegion": "ES",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-19.0167",
+        "longitude": "-40.5333"
+      }
+    }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .scroll-mt-12 {
+            scroll-margin-top: 3rem;
+        }
+        @layer base {
+            .prose h2 {
+                margin-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white font-sans text-gray-800 selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- Header / Navegação -->
+    <header class="relative overflow-hidden bg-white border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 border-b border-gray-50">
+            <ul class="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-500">
+                <li><a href="#historia" class="hover:text-emerald-600 transition-colors">História</a></li>
+                <li><a href="#localizacao" class="hover:text-emerald-600 transition-colors">Onde Fica</a></li>
+                <li><a href="#economia" class="hover:text-emerald-600 transition-colors">Economia</a></li>
+                <li><a href="#turismo" class="hover:text-emerald-600 transition-colors">Turismo</a></li>
+                <li><a href="#camara" class="hover:text-emerald-600 transition-colors">Câmara</a></li>
+                <li><a href="#faq" class="hover:text-emerald-600 transition-colors">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+                    São Gabriel da Palha: Guia Completo da Cidade
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Bem-vindo ao portal definitivo de informações sobre <strong>São Gabriel da Palha</strong>. 
+                    Descubra tudo sobre a Capital do Café Conilon, desde sua rica história até as oportunidades econômicas e belezas turísticas.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Seção do Assistente Inteligente -->
+        <section id="assistant" class="mb-20 bg-emerald-50 rounded-3xl p-8 sm:p-12 shadow-sm border border-emerald-100">
+            <div class="flex items-center gap-3 mb-6">
+                <i data-lucide="message-square" class="text-emerald-600 w-8 h-8"></i>
+                <h2 class="text-2xl font-bold text-emerald-900">Assistente Inteligente de São Gabriel da Palha</h2>
+            </div>
+            <p class="text-emerald-800 mb-8">
+                Tem alguma dúvida rápida? Pergunte ao nosso assistente sobre a <strong>história de São Gabriel da Palha</strong>, 
+                <strong>turismo</strong>, <strong>economia</strong> ou <strong>população</strong>.
+            </p>
+            <form id="assistantForm" class="flex flex-col sm:flex-row gap-4">
+                <input
+                    type="text"
+                    id="questionInput"
+                    placeholder="Ex: Qual a economia da cidade?"
+                    class="flex-1 px-6 py-4 rounded-xl border-2 border-emerald-200 focus:border-emerald-500 focus:ring-0 outline-none transition-all bg-white"
+                >
+                <button
+                    type="submit"
+                    id="submitBtn"
+                    class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-200 disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                    <i data-lucide="search" class="w-5 h-5"></i> Perguntar
+                </button>
+            </form>
+
+            <div id="answerBox" class="mt-8 p-6 bg-white rounded-2xl border border-emerald-100 shadow-sm hidden">
+                <p id="answerText" class="text-emerald-900 leading-relaxed font-medium"></p>
+            </div>
+        </section>
+
+        <!-- Conteúdo Principal -->
+        <article class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-12">
+            
+            <section id="historia" class="scroll-mt-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="history" class="text-emerald-600"></i>
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">História de São Gabriel da Palha</h2>
+                </div>
+                <img 
+                    src="https://picsum.photos/seed/history-sgp/1200/600" 
+                    alt="Representação histórica da colonização de São Gabriel da Palha ES" 
+                    class="rounded-2xl shadow-md mb-8 w-full object-cover h-64 sm:h-96"
+                    referrerpolicy="no-referrer"
+                >
+                <p>
+                    A <strong>história de São Gabriel da Palha</strong> é um testemunho de resiliência e progresso no coração do Espírito Santo. 
+                    O povoamento da região teve início nas primeiras décadas do século XX, impulsionado pela expansão das fronteiras agrícolas do estado. 
+                    Diferente de outras regiões litorâneas, o interior capixaba foi desbravado por imigrantes europeus, principalmente poloneses e italianos, 
+                    que buscavam terras férteis para o cultivo. A bravura desses pioneiros foi fundamental para transformar a mata virgem em um dos 
+                    municípios mais produtivos do estado.
+                </p>
+                <p>
+                    O nome da cidade possui uma origem curiosa e religiosa. "São Gabriel" é uma homenagem ao Arcanjo Gabriel, enquanto "da Palha" refere-se 
+                    às coberturas de palha das primeiras habitações construídas pelos pioneiros. Esses colonos enfrentaram matas fechadas e desafios geográficos 
+                    para estabelecer as bases do que viria a ser um dos municípios mais prósperos do Noroeste capixaba.
+                </p>
+                <p>
+                    Durante meados do século XX, a economia local começou a se consolidar em torno da agricultura. A emancipação política de 
+                    <strong>São Gabriel da Palha</strong> ocorreu em 14 de maio de 1963, quando se desmembrou de Colatina. Desde então, a cidade 
+                    experimentou um crescimento demográfico e econômico acelerado, tornando-se uma referência regional em infraestrutura e qualidade de vida.
+                </p>
+                <p>
+                    Hoje, ao olhar para o passado, os gabrielenses orgulham-se de suas raízes polonesas e italianas, que ainda são visíveis na arquitetura, 
+                    na culinária e nas festividades locais. A trajetória da cidade é marcada pela transição de uma pequena vila de casas de palha para 
+                    um centro urbano dinâmico e moderno.
+                </p>
+            </section>
+
+            <section id="localizacao" class="scroll-mt-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="map-pin" class="text-emerald-600"></i>
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">Onde fica São Gabriel da Palha</h2>
+                </div>
+                <p>
+                    Se você está se perguntando <strong>onde fica São Gabriel da Palha</strong>, a resposta nos leva ao Noroeste do estado do Espírito Santo. 
+                    O município está estrategicamente posicionado em uma região de relevo ondulado, característica do interior capixaba, proporcionando um clima 
+                    tropical que favorece diversas culturas agrícolas.
+                </p>
+                <p>
+                    A cidade está situada a aproximadamente 210 quilômetros da capital, Vitória. O acesso principal é feito por rodovias estaduais bem pavimentadas, 
+                    conectando-a a outros centros importantes como Colatina (ao sul) e Nova Venécia (ao norte). Sua localização geográfica a torna um ponto 
+                    de convergência para o comércio regional, atendendo a diversas cidades vizinhas como Águia Branca, São Domingos do Norte e Vila Valério.
+                </p>
+                <p>
+                    Geograficamente, <strong>São Gabriel da Palha</strong> faz parte da bacia do Rio Doce, embora seja banhada por afluentes menores que são 
+                    vitais para a irrigação das lavouras de café. A altitude média da sede municipal é de cerca de 200 metros, o que contribui para temperaturas 
+                    médias anuais agradáveis, embora o verão possa ser bastante rigoroso.
+                </p>
+            </section>
+
+            <section id="economia" class="scroll-mt-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="trending-up" class="text-emerald-600"></i>
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">População e economia de São Gabriel da Palha</h2>
+                </div>
+                <img 
+                    src="https://picsum.photos/seed/coffee-sgp/1200/600" 
+                    alt="Plantação de café conilon em São Gabriel da Palha, base da economia local" 
+                    class="rounded-2xl shadow-md mb-8 w-full object-cover h-64 sm:h-96"
+                    referrerpolicy="no-referrer"
+                >
+                <p>
+                    A <strong>população de São Gabriel da Palha</strong> é um reflexo da diversidade cultural do Brasil. Com cerca de 38.000 habitantes, 
+                    segundo estimativas recentes, o município apresenta um crescimento constante. A densidade demográfica é equilibrada entre a zona urbana 
+                    e a zona rural, o que demonstra a força contínua do campo na vida dos cidadãos. O senso de comunidade é forte, com diversas associações 
+                    de moradores e grupos culturais que mantêm vivas as tradições dos antepassados.
+                </p>
+                <p>
+                    No que diz respeito à <strong>economia de São Gabriel da Palha</strong>, o título de "Capital do Café Conilon" não é por acaso. 
+                    A cidade abriga a sede da Cooabriel, a maior cooperativa de café conilon do Brasil, que desempenha um papel fundamental na regulação 
+                    do mercado e no apoio aos produtores locais. A cafeicultura é o motor principal, gerando milhares de empregos diretos e indiretos e 
+                    movimentando milhões de reais anualmente.
+                </p>
+                <p>
+                    Entretanto, a economia gabrielense não se resume apenas ao café. Nos últimos anos, houve uma diversificação notável. O setor de 
+                    confecções têxteis cresceu exponencialmente, tornando a cidade um polo de moda no interior do estado. Além disso, o comércio varejista 
+                    é extremamente forte, atraindo consumidores de toda a microrregião Noroeste.
+                </p>
+                <p>
+                    A agricultura familiar também merece destaque, com a produção de pimenta-do-reino, gado de leite e frutas ganhando espaço. Essa 
+                    pluralidade econômica garante que <strong>São Gabriel da Palha</strong> mantenha índices de desenvolvimento humano (IDH) acima da 
+                    média regional, proporcionando estabilidade e oportunidades para seus jovens.
+                </p>
+            </section>
+
+            <section id="turismo" class="scroll-mt-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="camera" class="text-emerald-600"></i>
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">Turismo em São Gabriel da Palha</h2>
+                </div>
+                <img 
+                    src="https://picsum.photos/seed/tourism-sgp/1200/600" 
+                    alt="Belezas naturais e turismo rural em São Gabriel da Palha Espírito Santo" 
+                    class="rounded-2xl shadow-md mb-8 w-full object-cover h-64 sm:h-96"
+                    referrerpolicy="no-referrer"
+                >
+                <p>
+                    O <strong>turismo em São Gabriel da Palha</strong> oferece uma experiência autêntica de interior, misturando lazer, cultura e natureza. 
+                    Para quem busca tranquilidade, as propriedades rurais que praticam o agroturismo são paradas obrigatórias. Nelas, os visitantes podem 
+                    conhecer de perto o processo de produção do café, desde a florada até a secagem dos grãos, degustar produtos artesanais como queijos, 
+                    doces e cachaças, e desfrutar da hospitalidade gabrielense.
+                </p>
+                <p>
+                    Entre os principais atrativos naturais, destacam-se as cachoeiras localizadas nos arredores da cidade, que servem como refúgio nos 
+                    dias quentes de verão. A paisagem formada pelos "pontões" (formações rochosas típicas do Espírito Santo) oferece oportunidades incríveis 
+                    para fotografia e contemplação.
+                </p>
+                <p>
+                    Culturalmente, a cidade vibra com eventos anuais. A "Festa do Café" é o ponto alto do calendário, celebrando a colheita com shows nacionais, 
+                    exposições agrícolas e a eleição da Rainha do Café. Outro aspecto importante do <strong>guia de São Gabriel da Palha</strong> é a 
+                    preservação das tradições dos imigrantes, celebradas em festas comunitárias que mantêm vivos os dialetos, as danças e a culinária polonesa.
+                </p>
+            </section>
+
+            <section id="camara" class="scroll-mt-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="landmark" class="text-emerald-600"></i>
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">Câmara Municipal de São Gabriel da Palha</h2>
+                </div>
+                <p>
+                    A <strong>Câmara Municipal de São Gabriel da Palha</strong> é o pilar do poder legislativo local. Composta por vereadores eleitos 
+                    democraticamente, sua função vai muito além da criação de leis. A Câmara é responsável por fiscalizar as ações do poder executivo, 
+                    garantindo que os recursos públicos sejam aplicados de forma transparente e eficiente em benefício da população.
+                </p>
+                <p>
+                    As sessões ordinárias são espaços de debate onde são discutidos projetos que impactam diretamente a vida do cidadão, desde questões 
+                    de infraestrutura urbana até incentivos à educação e saúde. A participação popular é incentivada através de audiências públicas, 
+                    permitindo que os moradores apresentem suas demandas e sugestões para o crescimento da cidade.
+                </p>
+                <p>
+                    Para mais informações sobre a atuação legislativa e transparência, você pode acessar o site oficial da 
+                    <a href="https://www.camarasgp.es.gov.br/" target="_blank" rel="noopener" class="text-emerald-600 hover:underline ml-1">
+                        Câmara Municipal de São Gabriel da Palha
+                    </a>.
+                </p>
+            </section>
+
+            <section id="servicos" class="scroll-mt-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="info" class="text-emerald-600"></i>
+                    <h2 class="text-3xl font-bold text-gray-900 m-0">Serviços públicos na cidade</h2>
+                </div>
+                <p>
+                    Os serviços públicos em <strong>São Gabriel da Palha</strong> são estruturados para atender às necessidades básicas e promover o 
+                    bem-estar social. A prefeitura municipal gerencia uma rede de unidades básicas de saúde (UBS) e o Hospital Santa Rita, que é uma 
+                    referência para atendimentos de média complexidade na região.
+                </p>
+                <p>
+                    Na área da educação, o município conta com diversas escolas de ensino fundamental e médio, além de polos de educação à distância e 
+                    parcerias com instituições técnicas. A segurança pública é reforçada pela atuação conjunta da Polícia Militar e Civil, mantendo a 
+                    cidade como um lugar seguro para se viver e investir.
+                </p>
+                <p>
+                    A infraestrutura urbana tem recebido investimentos constantes em pavimentação, saneamento básico e iluminação pública. Para o cidadão 
+                    que busca informações sobre impostos, licenças ou serviços sociais, a prefeitura disponibiliza um portal de serviços online, facilitando 
+                    o acesso sem a necessidade de deslocamento físico.
+                </p>
+                <p>
+                    Para detalhes sobre editais e serviços administrativos, visite o portal da 
+                    <a href="https://saogabriel.es.gov.br/" target="_blank" rel="noopener" class="text-emerald-600 hover:underline ml-1">
+                        Prefeitura de São Gabriel da Palha
+                    </a>.
+                </p>
+            </section>
+
+            <section id="faq" class="bg-gray-50 rounded-3xl p-8 border border-gray-100 scroll-mt-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Perguntas Frequentes (FAQ)</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-emerald-800 mb-2">Onde fica São Gabriel da Palha?</h3>
+                        <p>Localiza-se na região Noroeste do Espírito Santo, a cerca de 210 km de Vitória.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-emerald-800 mb-2">Quantos habitantes tem São Gabriel da Palha?</h3>
+                        <p>A população estimada é de aproximadamente 38.000 habitantes.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-emerald-800 mb-2">O que fazer em São Gabriel da Palha?</h3>
+                        <p>Visitar cachoeiras, participar da Festa do Café, conhecer o agroturismo e apreciar a culinária local.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-emerald-800 mb-2">Como funciona a Câmara Municipal?</h3>
+                        <p>Atua legislando e fiscalizando o executivo, com sessões abertas ao público para discussão de leis.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-emerald-800 mb-2">Qual a principal economia da cidade?</h3>
+                        <p>A produção de café Conilon é a base econômica, complementada pela indústria têxtil e comércio.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Conteúdo SEO Adicional (Totalizando ~1275 palavras) -->
+            <section id="detalhes-adicionais" class="text-sm text-gray-500 italic border-t pt-8">
+                <p>
+                    Este <strong>guia de São Gabriel da Palha</strong> foi elaborado para fornecer informações úteis para moradores e turistas. 
+                    A cidade continua a evoluir, preservando sua <strong>história de São Gabriel da Palha</strong> enquanto abraça a inovação tecnológica 
+                    na <strong>economia de São Gabriel da Palha</strong>. Com uma <strong>população de São Gabriel da Palha</strong> vibrante, 
+                    o município se destaca no interior capixaba. Agora você já sabe <strong>onde fica São Gabriel da Palha</strong> e o que esperar do 
+                    <strong>turismo em São Gabriel da Palha</strong>. A Capital do Café Conilon espera por você de braços abertos para mostrar o que há de melhor.
+                </p>
+                <p>
+                    A importância de São Gabriel da Palha no cenário estadual é inegável. Como um dos motores do agronegócio capixaba, 
+                    a cidade produz riqueza e exporta tradição. O café colhido nestas terras chega a mesas de todo o mundo, 
+                    levando o prestígio deste município. A dedicação dos agricultores garante que a qualidade do produto seja sempre superior, 
+                    mantendo o Espírito Santo como um dos maiores produtores globais de café. A resiliência do povo gabrielense é a marca registrada 
+                    de uma terra que floresceu a partir do trabalho duro e da união de diferentes culturas europeias e brasileiras.
+                </p>
+                <p>
+                    A infraestrutura de transporte e logística também desempenha um papel crucial, permitindo que a produção local seja escoada 
+                    com eficiência para os portos do estado. O investimento em tecnologia não se limita ao campo, mas estende-se às indústrias de 
+                    confecção, que utilizam maquinário de ponta para competir no mercado nacional. São Gabriel da Palha é um exemplo de como uma 
+                    cidade do interior pode se modernizar sem perder sua essência acolhedora e suas raízes culturais profundas.
+                </p>
+                <p>
+                    Em resumo, São Gabriel da Palha é feita de pessoas trabalhadoras e de uma identidade que se fortalece a cada nova colheita. 
+                    Seja para investir, morar ou visitar, este guia oferece o ponto de partida para compreender a beleza deste pedaço do Espírito Santo. 
+                    Convidamos você a explorar cada detalhe desta cidade, desde o aroma do café fresco nas manhãs rurais até o dinamismo de seu 
+                    centro comercial. São Gabriel da Palha é, sem dúvida, um dos tesouros mais preciosos do Noroeste capixaba.
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">São Gabriel da Palha</h3>
+                    <p class="text-gray-600 text-sm">
+                        O seu guia completo sobre a Capital do Café Conilon no Espírito Santo. 
+                        Informações atualizadas sobre história, economia e turismo.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Links Úteis</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#historia" class="hover:text-emerald-600 transition-colors">História</a></li>
+                        <li><a href="#turismo" class="hover:text-emerald-600 transition-colors">Turismo</a></li>
+                        <li><a href="#economia" class="hover:text-emerald-600 transition-colors">Economia</a></li>
+                        <li><a href="#faq" class="hover:text-emerald-600 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Contato</h3>
+                    <p class="text-gray-600 text-sm">
+                        Para informações oficiais, consulte os órgãos municipais. 
+                        Este site é um guia informativo otimizado para SEO.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 text-center text-gray-500 text-xs">
+                <p>&copy; <span id="year"></span> São Gabriel da Palha: Guia Completo da Cidade. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Define o ano atual no rodapé
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Inicializa os ícones Lucide
+        lucide.createIcons();
+
+        // Dados do Assistente Inteligente
+        const assistantData = [
+            {
+                keywords: ['história', 'origem', 'colonização', 'fundação', 'passado', 'antigamente'],
+                response: 'A história de São Gabriel da Palha começou no início do século XX, com a chegada de colonos poloneses e italianos. A cidade se desenvolveu rapidamente graças à cafeicultura e foi emancipada em 1963. Hoje é um polo regional importante no Noroeste do Espírito Santo.'
+            },
+            {
+                keywords: ['turismo', 'o que fazer', 'pontos turísticos', 'passear', 'visitar', 'lazer', 'cachoeira', 'festa'],
+                response: 'O turismo em São Gabriel da Palha destaca-se pelas belezas naturais, como cachoeiras e paisagens rurais. A Festa do Café é o principal evento cultural, atraindo milhares de visitantes. A gastronomia local, influenciada pelos colonos, também é um grande atrativo.'
+            },
+            {
+                keywords: ['economia', 'café', 'trabalho', 'produção', 'agricultura', 'dinheiro', 'conilon', 'cooperativa', 'cooabriel'],
+                response: 'A economia de São Gabriel da Palha é movida principalmente pela cafeicultura, sendo um dos maiores produtores de café Conilon do Brasil. Além disso, o setor de serviços e a indústria de confecções têm crescido significativamente na região.'
+            },
+            {
+                keywords: ['população', 'habitantes', 'pessoas', 'quantos', 'gente', 'moradores'],
+                response: 'A população de São Gabriel da Palha é estimada em aproximadamente 38.000 habitantes. É uma cidade acolhedora, com uma mistura rica de descendentes de imigrantes europeus e brasileiros de diversas regiões.'
+            },
+            {
+                keywords: ['onde fica', 'localização', 'perto de', 'distância', 'mapa', 'região', 'estado', 'vitoria', 'es'],
+                response: 'São Gabriel da Palha está localizada na região Noroeste do estado do Espírito Santo, Brasil. Fica a cerca de 210 km da capital Vitória e faz divisa com municípios como Nova Venécia, Águia Branca e São Domingos do Norte.'
+            },
+            {
+                keywords: ['camara', 'vereadores', 'legislativo', 'leis', 'politica'],
+                response: 'A Câmara Municipal de São Gabriel da Palha fiscaliza o poder executivo e cria leis municipais. É composta por vereadores eleitos e as sessões são abertas ao público.'
+            },
+            {
+                keywords: ['prefeitura', 'prefeito', 'serviços', 'saúde', 'educação', 'hospital'],
+                response: 'A Prefeitura de São Gabriel da Palha oferece diversos serviços públicos, como saúde (Hospital Santa Rita e UBS), educação e infraestrutura urbana.'
+            }
+        ];
+
+        const normalizeText = (text) => {
+            return text
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^\w\s]/gi, '');
+        };
+
+        const form = document.getElementById('assistantForm');
+        const input = document.getElementById('questionInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const answerBox = document.getElementById('answerBox');
+        const answerText = document.getElementById('answerText');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const question = input.value.trim();
+            if (!question) return;
+
+            submitBtn.disabled = true;
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Buscando...';
+            answerBox.classList.add('hidden');
+
+            setTimeout(() => {
+                const normalizedQuestion = normalizeText(question);
+                
+                const found = assistantData.find(item => 
+                    item.keywords.some(keyword => {
+                        const normalizedKeyword = normalizeText(keyword);
+                        return normalizedQuestion.includes(normalizedKeyword);
+                    })
+                );
+
+                if (found) {
+                    answerText.innerText = found.response;
+                } else {
+                    answerText.innerText = "Desculpe, ainda não tenho informações específicas sobre isso. Tente perguntar sobre história, turismo, economia, população ou localização de São Gabriel da Palha.";
+                }
+                
+                answerBox.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+                // Reinicializa ícones se necessário
+                lucide.createIcons();
+            }, 600);
+        });
+    </script>
+</body>
+</html>
